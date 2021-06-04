@@ -14,12 +14,16 @@ class person
     size_t age_ = 0;
 
     /**
-     * \brief Полное имя.
+     * \brief Имя.
      */
-    std::string full_name_;
+    std::string first_name_;
+
+    /**
+     * \brief Фамилия.
+     */
+    std::string last_name_;
 
 public:
-
     /**
      * \brief Инициализирует новый экземпляр класса.
      */
@@ -28,9 +32,10 @@ public:
     /**
      * \brief Инициализирует новый экземпляр класса.
      * \param age Возраст.
-     * \param full_name Полное имя.
+     * \param first_name Имя.
+     * \param last_name Фамилия.
      */
-    person(const size_t age, std::string full_name);
+    person(const size_t age, std::string first_name, std::string last_name);
 
     /**
      * \brief Считывает из потока ввода данные и создаёт по ним объект.
@@ -46,4 +51,6 @@ public:
      * \return Поток вывода.
      */
     friend std::ostream& operator<< (std::ostream& out, const person& person);
+
+    friend std::istream& operator>> (std::istream& in, person& person);
 };

@@ -13,7 +13,9 @@ int main()
 
     for (size_t i = 0; i < size; i++)
     {
-        persons[i] = person::read_from_stream();
+        // NOTE: Можно и первым, и вторым способом:
+        // persons[i] = person::read_from_stream();
+        std::cin >> persons[i];
     }
 
     for (size_t i = 0; i < size; i++)
